@@ -1,15 +1,15 @@
 import React, { Component } from "react";
 import "./App.css";
+import BillsContainer from "./components/BillsContainer";
 
 class App extends Component {
   render() {
     return (
       <div className="App">
         <header className="App-header">
-          <h1>
-            Edit <code>src/App.js</code> and save to reload.
-          </h1>
+          <h1>Bills Board</h1>
         </header>
+        <BillsContainer />
       </div>
     );
   }
