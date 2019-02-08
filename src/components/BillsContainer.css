@@ -1,0 +1,91 @@
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+input {
+  padding: 3vh 15vw;
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 15px;
+  transition: 1s;
+}
+
+input:focus {
+  outline: none;
+  box-shadow: 0.1rem 0.4rem 0.8rem #1c84c6;
+}
+
+h2 {
+  text-align: center;
+  text-transform: capitalize;
+  font-size: 20px;
+}
+
+.list {
+  list-style: none;
+  font-size: 25px;
+  margin: 10px;
+  transition: 0.2s;
+  margin-bottom: 30px;
+}
+
+.list:hover {
+  color: #1c84c6;
+  font-weight: bold;
+  /* text-shadow: 2px 2px #1c84c6; */
+}
+
+.wrapper {
+  margin-right: auto; /* 1 */
+  margin-left: auto; /* 1 */
+  max-width: 800px; /* 2 */
+
+  padding-right: 30px; /* 3 */
+  padding-left: 30px; /* 3 */
+
+  border-top: 1px solid black;
+}
+
+.cards {
+  display: inline-flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 210px; /* Set width of cards */
+  min-height: 250px;
+  display: flex; /* Children use Flexbox */
+  flex-direction: column; /* Rotate Axis */
+  border: 1px solid #f6f7f8; /* Set up Border */
+  border-radius: 4px; /* Slightly Curve edges */
+  overflow: hidden; /* Fixes the corners */
+  margin: 5px; /* Add space between cards */
+  background-color: #1c84c6;
+}
+
+.card-header {
+  color: #1c84c6;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 600;
+  border-bottom: 1px solid #f6f7f8;
+  background-color: #f6f7f8;
+  padding: 5px 10px;
+}
+
+.card-main {
+  display: flex; /* Children use Flexbox */
+  flex-direction: column; /* Rotate Axis to Vertical */
+  justify-content: center; /* Group Children in Center */
+  align-items: center; /* Group Children in Center (on cross axis) */
+  padding: 15px 0; /* Add padding to the top/bottom */
+}
+
+.main-description {
+  color: #f6f7f8;
+  font-size: 15px;
+  padding-left: 5px;
+  padding-right: 5px;
+  text-align: center;
+  font-weight: bold;
+}

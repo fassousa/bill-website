@@ -2,8 +2,10 @@
   "name": "bill-website",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://fassousa.github.io/",
   "dependencies": {
     "axios": "^0.18.0",
+    "gh-pages": "^2.0.1",
     "jquery": "^3.3.1",
     "lodash": "^4.17.11",
     "react": "^16.7.0",
@@ -15,6 +17,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -b master -d build",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

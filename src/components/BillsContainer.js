@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { Search, Grid, Header, Segment } from "semantic-ui-react";
+import { Search, Grid, Header, Segment, Input } from "semantic-ui-react";
 import _ from "lodash";
+import "./BillsContainer.css";
 
 class App extends Component {
   constructor(props) {
@@ -56,9 +57,12 @@ class App extends Component {
   moreInfo(selected) {
     this.setState({
       moreInfo: {
-        house: selected.house,
-        description: selected.description,
-        tsv: selected.tsv
+        autor: selected.author,
+        ano: selected.year,
+        tipo: selected.kind,
+        número: selected.number,
+        nome: selected.name,
+        descrição: selected.description
       }
     });
   }
@@ -68,22 +72,32 @@ class App extends Component {
 
     return (
       <div>
-        <input onChange={this.sayHi} />
+        <Input
+          className="input"
+          placeholder="Search bill by number"
+          onChange={this.sayHi}
+        />
         {/* {console.log(this.state.bills[0])} */}
         <ul>
           {this.state.results.map(result => {
             return (
-              <li onClick={() => this.moreInfo(result)}>
-                {result.year}, {result.author}
+              <li className="list" onClick={() => this.moreInfo(result)}>
+                {result.year} {result.author} {result.status}
               </li>
             );
           })}
         </ul>
         {Object.keys(this.state.moreInfo).map(key => {
           return (
-            <div>
-              <h2>{key}</h2>
-              <p>{this.state.moreInfo[key]}</p>
+            <div className="cards">
+              <div className="card">
+                <div className="card-header">
+                  <h2>{key}</h2>
+                </div>
+                <div className="card-main">
+                  <p className="main-description">{this.state.moreInfo[key]}</p>
+                </div>
+              </div>
             </div>
           );
         })}
